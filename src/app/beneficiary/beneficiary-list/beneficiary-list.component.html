@@ -1,0 +1,67 @@
+<div class="row">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h2>List of Beneficiaries</h2>
+        </div>
+        <div class="panel-body">
+            <div *ngIf="beneficiaries && beneficiaries.length">
+                <div class="col-md-1 pull-right">
+                    <button type="button" class="btn btn-sm btn-primary" [routerLink]="['/beneficiary']">Add</button>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="table-responsive">
+                    <table class="table table-hover " *ngIf="beneficiaries && beneficiaries.length">
+                        <thead>
+                            <tr>
+                                <th>Beneficiary Name</th>
+                                <th>Address</th>
+                                <th>City</th>
+                                <th>Secretary Name</th>
+                                <th>Phone Number</th>
+                                <th>Email Address</th>
+                                <th>Status</th>
+                            </tr>
+                            <tr>
+                                <th><input type="text" class="form-control" placeholder="Search" [(ngModel)]="listNameFilter"
+                                    /></th>
+                                <th></th>
+                                <th>
+                                    <select class="form-control" placeholder="Search" type="text" [(ngModel)]="listCityFilter">
+                                <option>All</option>
+                                <option>Chennai</option>
+                                <option>Pune</option>
+                            </select>
+                                </th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th>
+                                    <select class="form-control" placeholder="Search" type="text" [(ngModel)]="listStatusFilter">
+                                <option>All</option>
+                                <option>Active</option>
+                                <option>Inactive</option>
+                            </select>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let beneficiary of beneficiaries | beneficiaryListFilter:listCityFilter:listNameFilter:listStatusFilter " [routerLink]="['/beneficiary',beneficiary.benficiaryId]">
+                                <td>{{beneficiary.benficiaryName}}</td>
+                                <td>{{beneficiary.benficiaryAddress}},{{beneficiary.benficiaryCity}},{{beneficiary.benficiaryState}}</td>
+                                <td>{{beneficiary.benficiaryCity}}</td>
+                                <td>{{beneficiary.benficiarySecretaryName}}</td>
+                                <td>{{beneficiary.benficiaryPhoneNumber}}</td>
+                                <td>{{beneficiary.emailAddr}}</td>
+                                <td><span *ngIf="beneficiary.benficiaryStatus == 'A'">Active</span><span *ngIf="beneficiary.benficiaryStatus == 'I'">Inactive</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <pagination [boundaryLinks]="true" [totalItems]="totalItems" [(ngModel)]="currentPage" [maxSize]="maxSize" class="pagination-sm" previousText="&lsaquo;"
+                        nextText="&rsaquo;" firstText="&laquo;" lastText="&raquo;">
+                    </pagination>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

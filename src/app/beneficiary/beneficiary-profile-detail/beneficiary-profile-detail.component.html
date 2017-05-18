@@ -1,0 +1,88 @@
+<div class="container" *ngIf="beneficiaryProfile">
+    <div class="row">
+        <div class="col-md-12">
+            <form [formGroup]="form" class="form-horizontal" (ngSubmit)="updateBeneficiary()" role="form">
+                <div class="form-group" [ngClass]="{'has-error':!form.controls['name'].valid && form.controls['name'].touched}">
+                    <label for="name" class="col-md-2 control-label">Name</label>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" placeholder="Enter beneficiary name" id="name" name="name" [formControl]="form.controls['name']">
+                        <div *ngIf="form.controls['name'].hasError('required') && form.controls['name'].touched" class="nxn-error-msg"><span class="fa fa-warning"></span> Fill out name</div>
+                    </div>
+                    
+                </div>
+
+                <div class="form-group" [ngClass]="{'has-error':!form.controls['secretaryName'].valid && form.controls['secretaryName'].touched}">
+                    <label for="secretaryName" class="col-md-2 control-label">Secretary Name</label>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" placeholder="Enter secretary name" id="secretaryName" name="secretaryName" [formControl]="form.controls['secretaryName']">
+                        <div *ngIf="form.controls['secretaryName'].hasError('required') && form.controls['secretaryName'].touched" class="nxn-error-msg"><span class="fa fa-warning"></span> Fill out secretary name</div>
+                    </div>
+                </div>
+
+                <div class="form-group" [ngClass]="{'has-error':!form.controls['address'].valid && form.controls['address'].touched}">
+                    <label for="address" class="col-md-2 control-label">Address</label>
+                    <div class="col-md-4">
+                        <textarea class="form-control" rows="3"  placeholder="Enter address" id="address" name="address" [formControl]="form.controls['address']"></textarea>
+                        <div *ngIf="form.controls['address'].hasError('required') && form.controls['address'].touched" class="nxn-error-msg"><span class="fa fa-warning"></span> Fill out address</div>
+                    </div>
+                </div>
+
+                <div class="form-group" [ngClass]="{'has-error':!form.controls['city'].valid && form.controls['city'].touched}">
+                    <label for="city" class="col-md-2 control-label">City</label>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" placeholder="Enter city" id="city" name="city" [formControl]="form.controls['city']">
+                        <div *ngIf="form.controls['city'].hasError('required') && form.controls['city'].touched" class="nxn-error-msg"><span class="fa fa-warning"></span> Fill out city</div>
+                    </div>
+                </div>
+
+                <div class="form-group" [ngClass]="{'has-error':!form.controls['state'].valid && form.controls['state'].touched}">
+                    <label for="state" class="col-md-2 control-label">State</label>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" placeholder="Enter state" id="state" name="state" [formControl]="form.controls['state']">
+                        <div *ngIf="form.controls['state'].hasError('required') && form.controls['state'].touched" class="nxn-error-msg"><span class="fa fa-warning"></span> Fill out state</div>
+                    </div>
+                </div>
+
+            
+                <div class="form-group" [ngClass]="{'has-error':!form.controls['phoneNo'].valid && form.controls['phoneNo'].touched}">
+                    <label for="phoneNo" class="col-md-2 control-label">Phone No</label>
+                    <div class="col-md-4">
+                        <input type="tel" class="form-control" placeholder="Enter phone no" id="phoneNo" name="phoneNo" [formControl]="form.controls['phoneNo']">
+                        <div *ngIf="form.controls['phoneNo'].hasError('required') && form.controls['phoneNo'].touched" class="nxn-error-msg"><span class="fa fa-warning"></span> Fill out phone number</div>
+                    </div>
+                </div>
+
+                <div class="form-group" [ngClass]="{'has-error':!form.controls['panNo'].valid && form.controls['panNo'].touched}">
+                    <label for="panNo" class="col-md-2 control-label">Pan No</label>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" placeholder="Enter PAN number" id="panNo" name="panNo" [formControl]="form.controls['panNo']">
+                        <div *ngIf="form.controls['panNo'].hasError('required') && form.controls['panNo'].touched" class="nxn-error-msg"><span class="fa fa-warning"></span> Fill out PAN number</div>
+                    </div>
+                </div>
+
+                <div class="form-group" [ngClass]="{'has-error':!form.controls['vetting'].valid && form.controls['vetting'].touched}">
+                    <label for="vetting" class="col-md-2 control-label">Vetting</label>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" placeholder="Enter vetting" id="vetting" name="vetting" [formControl]="form.controls['vetting']">
+                        <div *ngIf="form.controls['vetting'].hasError('required') && form.controls['vetting'].touched" class="nxn-error-msg"><span class="fa fa-warning"></span> Fill out vetting</div>
+                    </div>
+                </div>
+
+                <div class="form-group" [ngClass]="{'has-error':!form.controls['status'].valid && form.controls['status'].touched}">
+                    <label for="status" class="col-md-2 control-label">Beneficiary Status</label>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" placeholder="Enter status" id="status" name="status" [formControl]="form.controls['status']">
+                        <div *ngIf="form.controls['status'].hasError('required') && form.controls['status'].touched" class="nxn-error-msg"><span class="fa fa-warning"></span> Fill out status</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-4">
+                        <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Save</button>
+                        <button class="btn btn-primary" [routerLink]="['/beneficiaries']">Cancel</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div> 

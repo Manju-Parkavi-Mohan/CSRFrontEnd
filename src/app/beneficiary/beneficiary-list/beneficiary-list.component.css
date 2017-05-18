@@ -1,0 +1,13 @@
+td{
+    cursor:pointer;
+}
+td a{
+    text-decoration: none;
+}
+thead tr .form-control{
+    height: 27px;
+    padding: 0px 5px;
+}
+.col-md-1.pull-right{
+    width: 4%;
+}

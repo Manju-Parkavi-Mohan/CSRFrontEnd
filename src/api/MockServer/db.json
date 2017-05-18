@@ -1,0 +1,43 @@
+{"beneficiaries":
+    [
+        {
+            "id":1,
+            "name":"Avai Home",
+            "secretaryName":"Lakshmi",
+            "address":"33,xyz",
+            "city":"chennai",
+            "phoneNo":9494949494,
+            "email":"abc@gmail.com",
+            "faxNo":235235,
+            "state":"TN",
+            "accno":2343434,
+            "panno":1234
+        },
+        {
+            "id":2,
+            "name":"Little Flowers",
+            "secretaryName":"Priya",
+            "address":"12,ads",
+            "city":"chennai",
+            "phoneNo":9494949494,
+            "email":"erf@gmail.com",
+            "faxNo":235235,
+            "state":"TN",
+            "accno":3433,
+            "panno":9999
+        },
+        {
+            "id":3,
+            "name":"Varathappa",
+            "secretaryName":"Shakshi",
+            "address":"45,sndkjas",
+            "city":"chennai",
+            "phoneNo":9494949494,
+            "email":"yht@gmail.com",
+            "faxNo":235235,
+            "state":"TN",
+            "accno":778787878,
+            "panno":112
+        }
+    ]
+}

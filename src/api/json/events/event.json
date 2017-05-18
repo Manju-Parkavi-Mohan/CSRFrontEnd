@@ -1,0 +1,21 @@
+{  
+      "eventName":"Diwali Celebration",
+      "eventLocation":[  
+         {  
+            "beneficiaryName":"Avvai Home",
+            "city":"Chennai"
+         },
+         {  
+            "beneficiaryName":"Little Flowers",
+            "city":"Pune"
+         },
+         {  
+            "beneficiaryName":"VNO",
+            "city":"Chennai"
+         }
+      ],
+      "eventStartDate":"2017-03-17",
+      "eventEndDate":"2017-03-18",
+      "eventStartTime":"12:00 PM",
+      "eventEndTime":"4:00 PM"
+   }

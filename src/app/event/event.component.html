@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+        <div class="datepicker-outer">
+            <datepicker [(ngModel)]="date"  [showWeeks]="false"></datepicker>
+        </div>
+        <div class="col-md-5 col-md-offset-2 responsive" *ngIf="events">
+            <table class="table">
+                <thead>
+                    <th>Event</th>
+                    <th>Starts At</th>
+                    <th>Ends At</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let event of events">
+                        <td>{{event.eventName}}</td>
+                        <td>{{event.eventStartDate}}  {{event.eventStartTime}}</td>
+                        <td>{{event.eventEndDate}}  {{event.eventEndTime}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

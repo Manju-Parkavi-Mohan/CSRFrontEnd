@@ -1,0 +1,12 @@
+.container{
+    padding-top: 20px;
+}
+
+label.col-md-2.control-label{
+    text-align:left;
+}
+
+.col-md-4.alert.alert-danger{
+    padding:6px 12px;
+    margin-bottom:0px;
+}

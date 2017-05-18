@@ -1,0 +1,46 @@
+<div class="col-md-5 beneDocument" *ngIf="beneficiary">
+    <form class="form-horizontal" role="form">
+        <div class="row">
+             <div class="form-group">
+                <label class="col-sm-3  control-label" for="docType">Document Type</label>
+                <div class="col-sm-3">
+                    <select class="form-control" id="docType" name="docType" [(ngModel)]="option" (change)="showChildModal()">
+                        <option>EDG</option>
+                        <option>Pan Card</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row" >
+            <div class="col-md-3" *ngFor="let document of beneficiary.documents">
+                <img [src]="document.imgUrl" class="img-thumbnail">
+            </div>
+        </div>    
+    </form>
+    <div bsModal #childModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title pull-left">Browse Document Image</h3>
+                    <button type="button" class="close pull-right" aria-label="Close" (click)="hideChildModal()">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form class="form-inline" role="form">
+                        <div class="form-group">
+                            <div class="col-sm-5">
+                                <input type="file" class="form-control" id="docUpload" name="docUpload" (change)="fileChangeEvent($event)">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-3">
+                                <button type="button" class="btn btn-primary form-control" (click)="uploadDoc()">Upload</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div> 
+</div>

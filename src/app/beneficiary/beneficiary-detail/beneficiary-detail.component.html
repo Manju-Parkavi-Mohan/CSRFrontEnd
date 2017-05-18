@@ -1,0 +1,21 @@
+<div class="row" *ngIf="beneficiary">
+  <div class="col-md-9">
+    <tabset>
+      <tab (select)="setHeaderName('Profile')">
+        <template tabHeading>Profile</template>
+        <beneficiary-profile [beneficiaryProfile]="beneficiary.beneficiaryProfile"></beneficiary-profile>
+      </tab>
+      <tab (select)="setHeaderName('Documents')">
+        <template tabHeading>Documents</template>
+        <beneficiary-document [beneficiary]="beneficiary"></beneficiary-document>
+      </tab>
+      <tab (select)="setHeaderName('Fund Info')">
+        <template tabHeading>Fund Information</template>
+        Tab 3 content
+      </tab>
+    </tabset>
+  </div>
+  <div class="col-md-3 text-right">
+    <h4><b>{{headerContent}} of {{beneficiaryName}}</b></h4>
+  </div>
+</div>
